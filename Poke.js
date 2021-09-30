@@ -38,20 +38,19 @@ class Poke {
         
         document.getElementById('b').addEventListener('click', (e) => {
             e.preventDefault()
-            Poke.all.filter(poke => {
-                if (poke.data.name.startsWith('b')) {
-                    main.innerHTML = ""
-                    const div = document.createElement('div')
-                    console.log(poke.data.name)
-                    main.append(div)
-                    div.innerHTML += `<p>${poke.data.name}</p>`
-                    
-                    
-    
-            }
-    
+            const bPoke = Poke.all.filter(poke => poke.data.name.startsWith('b')) 
+            console.log(bPoke)
+            main.innerHTML = ""
+            bPoke.forEach (poke => {
+                
+                const div = document.createElement('div')
+                console.log(poke.data.name)
+                main.append(div)
+                div.innerHTML += `<p>${poke.data.name}</p>`
             })
-        })
+           
+            })
+       
     }
 
 }
